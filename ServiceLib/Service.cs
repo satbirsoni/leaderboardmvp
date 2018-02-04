@@ -10,27 +10,27 @@ namespace ServiceLib
 
         public int addContest()
         {
-            throw new NotImplementedException();
+            return db.CreateContest();
         }
 
         public int createPrivateContest()
         {
-            throw new NotImplementedException();
+            return db.CreateContest(true);
         }
 
         public int createPublicContest()
         {
-            throw new NotImplementedException();
+            return db.CreateContest();
         }
 
-        public int geAllPrivateContest()
+        public int[] geAllPrivateContest()
         {
-            throw new NotImplementedException();
+            return db.GetAllPrivateContest();
         }
 
         public int[] geAllPubicContest()
         {
-            throw new NotImplementedException();
+            return db.GetAllPublicContest();
         }
 
         public int getContest()

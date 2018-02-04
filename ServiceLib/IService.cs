@@ -18,7 +18,7 @@ namespace ServiceLib
         int[] geAllPubicContest();
 
         [OperationContract]
-        int geAllPrivateContest();
+        int []geAllPrivateContest();
 
         [OperationContract]
         int getContest();

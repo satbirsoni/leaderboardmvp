@@ -9,129 +9,122 @@
 //------------------------------------------------------------------------------
 
 namespace LeaderBoardClient.ServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/ServiceLib")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
+    public interface IService {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPublicContest", ReplyAction="http://tempuri.org/IService/createPublicContestResponse")]
+        int createPublicContest();
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPublicContest", ReplyAction="http://tempuri.org/IService/createPublicContestResponse")]
+        System.Threading.Tasks.Task<int> createPublicContestAsync();
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPrivateContest", ReplyAction="http://tempuri.org/IService/createPrivateContestResponse")]
+        int createPrivateContest();
         
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPrivateContest", ReplyAction="http://tempuri.org/IService/createPrivateContestResponse")]
+        System.Threading.Tasks.Task<int> createPrivateContestAsync();
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPubicContest", ReplyAction="http://tempuri.org/IService/geAllPubicContestResponse")]
+        int[] geAllPubicContest();
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPubicContest", ReplyAction="http://tempuri.org/IService/geAllPubicContestResponse")]
+        System.Threading.Tasks.Task<int[]> geAllPubicContestAsync();
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPrivateContest", ReplyAction="http://tempuri.org/IService/geAllPrivateContestResponse")]
+        int[] geAllPrivateContest();
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPrivateContest", ReplyAction="http://tempuri.org/IService/geAllPrivateContestResponse")]
+        System.Threading.Tasks.Task<int[]> geAllPrivateContestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getContest", ReplyAction="http://tempuri.org/IService/getContestResponse")]
+        int getContest();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getContest", ReplyAction="http://tempuri.org/IService/getContestResponse")]
+        System.Threading.Tasks.Task<int> getContestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateContest", ReplyAction="http://tempuri.org/IService/UpdateContestResponse")]
+        int UpdateContest();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateContest", ReplyAction="http://tempuri.org/IService/UpdateContestResponse")]
+        System.Threading.Tasks.Task<int> UpdateContestAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
-    public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        LeaderBoardClient.ServiceReference.CompositeType GetDataUsingDataContract(LeaderBoardClient.ServiceReference.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<LeaderBoardClient.ServiceReference.CompositeType> GetDataUsingDataContractAsync(LeaderBoardClient.ServiceReference.CompositeType composite);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : LeaderBoardClient.ServiceReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : LeaderBoardClient.ServiceReference.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<LeaderBoardClient.ServiceReference.IService1>, LeaderBoardClient.ServiceReference.IService1 {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<LeaderBoardClient.ServiceReference.IService>, LeaderBoardClient.ServiceReference.IService {
         
-        public Service1Client() {
+        public ServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public ServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public int createPublicContest() {
+            return base.Channel.createPublicContest();
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<int> createPublicContestAsync() {
+            return base.Channel.createPublicContestAsync();
         }
         
-        public LeaderBoardClient.ServiceReference.CompositeType GetDataUsingDataContract(LeaderBoardClient.ServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public int createPrivateContest() {
+            return base.Channel.createPrivateContest();
         }
         
-        public System.Threading.Tasks.Task<LeaderBoardClient.ServiceReference.CompositeType> GetDataUsingDataContractAsync(LeaderBoardClient.ServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<int> createPrivateContestAsync() {
+            return base.Channel.createPrivateContestAsync();
+        }
+        
+        public int[] geAllPubicContest() {
+            return base.Channel.geAllPubicContest();
+        }
+        
+        public System.Threading.Tasks.Task<int[]> geAllPubicContestAsync() {
+            return base.Channel.geAllPubicContestAsync();
+        }
+        
+        public int[] geAllPrivateContest() {
+            return base.Channel.geAllPrivateContest();
+        }
+        
+        public System.Threading.Tasks.Task<int[]> geAllPrivateContestAsync() {
+            return base.Channel.geAllPrivateContestAsync();
+        }
+        
+        public int getContest() {
+            return base.Channel.getContest();
+        }
+        
+        public System.Threading.Tasks.Task<int> getContestAsync() {
+            return base.Channel.getContestAsync();
+        }
+        
+        public int UpdateContest() {
+            return base.Channel.UpdateContest();
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateContestAsync() {
+            return base.Channel.UpdateContestAsync();
         }
     }
 }
