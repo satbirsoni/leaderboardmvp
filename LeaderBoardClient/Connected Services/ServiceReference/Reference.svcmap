@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb0f72aa-f6fe-4386-bd78-6e6c188fa042" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/LeaderBoard/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="9cfbb1e5-2ea3-4de5-be68-8b6b2483269d" SourceId="1" SourceUrl="http://localhost:8000/LeaderBoard/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ac7d61ee-9780-4f5c-836f-23f2db082c65" SourceId="1" SourceUrl="http://localhost:8000/LeaderBoard/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a8c9ff45-0dde-4d67-b25a-33450a79be6a" SourceId="1" SourceUrl="http://localhost:8000/LeaderBoard/?xsd=xsd1" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="a470c6a3-1a54-4926-b434-aa9c45670f2c" SourceId="1" SourceUrl="http://localhost:8000/LeaderBoard/?wsdl" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="cc1eb608-bd07-4059-844f-d13c7116e8eb" SourceId="1" SourceUrl="http://localhost:8000/LeaderBoard/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
