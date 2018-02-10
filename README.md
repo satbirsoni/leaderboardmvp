@@ -1,3 +1,9 @@
+# How to run
+- Go to bin directory
+- Run Host.exe as administrator
+- Once Host service is running, Run Client LeaderBoardClient.exe
+- Follow command line
+
 # Core Concept
 Both web and PC application are supported
 Clients are provided for reading data
