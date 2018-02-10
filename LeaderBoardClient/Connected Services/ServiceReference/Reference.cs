@@ -15,41 +15,53 @@ namespace LeaderBoardClient.ServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPublicContest", ReplyAction="http://tempuri.org/IService/createPublicContestResponse")]
-        int createPublicContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CreatePublicContest", ReplyAction="http://tempuri.org/IService/CreatePublicContestResponse")]
+        int CreatePublicContest();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPublicContest", ReplyAction="http://tempuri.org/IService/createPublicContestResponse")]
-        System.Threading.Tasks.Task<int> createPublicContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CreatePublicContest", ReplyAction="http://tempuri.org/IService/CreatePublicContestResponse")]
+        System.Threading.Tasks.Task<int> CreatePublicContestAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPrivateContest", ReplyAction="http://tempuri.org/IService/createPrivateContestResponse")]
-        int createPrivateContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CreatePrivateContest", ReplyAction="http://tempuri.org/IService/CreatePrivateContestResponse")]
+        int CreatePrivateContest();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/createPrivateContest", ReplyAction="http://tempuri.org/IService/createPrivateContestResponse")]
-        System.Threading.Tasks.Task<int> createPrivateContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CreatePrivateContest", ReplyAction="http://tempuri.org/IService/CreatePrivateContestResponse")]
+        System.Threading.Tasks.Task<int> CreatePrivateContestAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPubicContest", ReplyAction="http://tempuri.org/IService/geAllPubicContestResponse")]
-        int[] geAllPubicContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPubicContest", ReplyAction="http://tempuri.org/IService/GetAllPubicContestResponse")]
+        int[] GetAllPubicContest();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPubicContest", ReplyAction="http://tempuri.org/IService/geAllPubicContestResponse")]
-        System.Threading.Tasks.Task<int[]> geAllPubicContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPubicContest", ReplyAction="http://tempuri.org/IService/GetAllPubicContestResponse")]
+        System.Threading.Tasks.Task<int[]> GetAllPubicContestAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPrivateContest", ReplyAction="http://tempuri.org/IService/geAllPrivateContestResponse")]
-        int[] geAllPrivateContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPrivateContest", ReplyAction="http://tempuri.org/IService/GetAllPrivateContestResponse")]
+        int[] GetAllPrivateContest();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/geAllPrivateContest", ReplyAction="http://tempuri.org/IService/geAllPrivateContestResponse")]
-        System.Threading.Tasks.Task<int[]> geAllPrivateContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPrivateContest", ReplyAction="http://tempuri.org/IService/GetAllPrivateContestResponse")]
+        System.Threading.Tasks.Task<int[]> GetAllPrivateContestAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getContest", ReplyAction="http://tempuri.org/IService/getContestResponse")]
-        int getContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetContest", ReplyAction="http://tempuri.org/IService/GetContestResponse")]
+        System.Collections.Generic.Dictionary<int, int> GetContest(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getContest", ReplyAction="http://tempuri.org/IService/getContestResponse")]
-        System.Threading.Tasks.Task<int> getContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetContest", ReplyAction="http://tempuri.org/IService/GetContestResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, int>> GetContestAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateContest", ReplyAction="http://tempuri.org/IService/UpdateContestResponse")]
-        int UpdateContest();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddPlayer", ReplyAction="http://tempuri.org/IService/AddPlayerResponse")]
+        int AddPlayer(int contestID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateContest", ReplyAction="http://tempuri.org/IService/UpdateContestResponse")]
-        System.Threading.Tasks.Task<int> UpdateContestAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddPlayer", ReplyAction="http://tempuri.org/IService/AddPlayerResponse")]
+        System.Threading.Tasks.Task<int> AddPlayerAsync(int contestID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateScore", ReplyAction="http://tempuri.org/IService/UpdateScoreResponse")]
+        void UpdateScore(int contestid, int playerid, int score);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateScore", ReplyAction="http://tempuri.org/IService/UpdateScoreResponse")]
+        System.Threading.Tasks.Task UpdateScoreAsync(int contestid, int playerid, int score);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPlayers", ReplyAction="http://tempuri.org/IService/GetAllPlayersResponse")]
+        int[] GetAllPlayers(int contestid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllPlayers", ReplyAction="http://tempuri.org/IService/GetAllPlayersResponse")]
+        System.Threading.Tasks.Task<int[]> GetAllPlayersAsync(int contestid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -79,52 +91,68 @@ namespace LeaderBoardClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public int createPublicContest() {
-            return base.Channel.createPublicContest();
+        public int CreatePublicContest() {
+            return base.Channel.CreatePublicContest();
         }
         
-        public System.Threading.Tasks.Task<int> createPublicContestAsync() {
-            return base.Channel.createPublicContestAsync();
+        public System.Threading.Tasks.Task<int> CreatePublicContestAsync() {
+            return base.Channel.CreatePublicContestAsync();
         }
         
-        public int createPrivateContest() {
-            return base.Channel.createPrivateContest();
+        public int CreatePrivateContest() {
+            return base.Channel.CreatePrivateContest();
         }
         
-        public System.Threading.Tasks.Task<int> createPrivateContestAsync() {
-            return base.Channel.createPrivateContestAsync();
+        public System.Threading.Tasks.Task<int> CreatePrivateContestAsync() {
+            return base.Channel.CreatePrivateContestAsync();
         }
         
-        public int[] geAllPubicContest() {
-            return base.Channel.geAllPubicContest();
+        public int[] GetAllPubicContest() {
+            return base.Channel.GetAllPubicContest();
         }
         
-        public System.Threading.Tasks.Task<int[]> geAllPubicContestAsync() {
-            return base.Channel.geAllPubicContestAsync();
+        public System.Threading.Tasks.Task<int[]> GetAllPubicContestAsync() {
+            return base.Channel.GetAllPubicContestAsync();
         }
         
-        public int[] geAllPrivateContest() {
-            return base.Channel.geAllPrivateContest();
+        public int[] GetAllPrivateContest() {
+            return base.Channel.GetAllPrivateContest();
         }
         
-        public System.Threading.Tasks.Task<int[]> geAllPrivateContestAsync() {
-            return base.Channel.geAllPrivateContestAsync();
+        public System.Threading.Tasks.Task<int[]> GetAllPrivateContestAsync() {
+            return base.Channel.GetAllPrivateContestAsync();
         }
         
-        public int getContest() {
-            return base.Channel.getContest();
+        public System.Collections.Generic.Dictionary<int, int> GetContest(int id) {
+            return base.Channel.GetContest(id);
         }
         
-        public System.Threading.Tasks.Task<int> getContestAsync() {
-            return base.Channel.getContestAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<int, int>> GetContestAsync(int id) {
+            return base.Channel.GetContestAsync(id);
         }
         
-        public int UpdateContest() {
-            return base.Channel.UpdateContest();
+        public int AddPlayer(int contestID) {
+            return base.Channel.AddPlayer(contestID);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateContestAsync() {
-            return base.Channel.UpdateContestAsync();
+        public System.Threading.Tasks.Task<int> AddPlayerAsync(int contestID) {
+            return base.Channel.AddPlayerAsync(contestID);
+        }
+        
+        public void UpdateScore(int contestid, int playerid, int score) {
+            base.Channel.UpdateScore(contestid, playerid, score);
+        }
+        
+        public System.Threading.Tasks.Task UpdateScoreAsync(int contestid, int playerid, int score) {
+            return base.Channel.UpdateScoreAsync(contestid, playerid, score);
+        }
+        
+        public int[] GetAllPlayers(int contestid) {
+            return base.Channel.GetAllPlayers(contestid);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> GetAllPlayersAsync(int contestid) {
+            return base.Channel.GetAllPlayersAsync(contestid);
         }
     }
 }

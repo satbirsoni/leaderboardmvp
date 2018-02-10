@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.Collections.Generic;
 
 namespace ServiceLib
 {
@@ -8,35 +9,63 @@ namespace ServiceLib
     [ServiceContract]
     public interface IService
     {
+        /// <summary>
+        /// Creates a public contest for given client
+        /// </summary>        
+        /// <returns></returns>
         [OperationContract]
-        int createPublicContest();
+        int CreatePublicContest();
+
+        /// <summary>
+        /// Creates a private contest for given client
+        /// </summary>
+        
+        /// <returns></returns>
+        [OperationContract]
+        int CreatePrivateContest();
+
+        /// <summary>
+        /// Returns ID of all public contests
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        int[] GetAllPubicContest();
+
+        /// <summary>
+        /// Returns ID of all private contest for this client
+        /// </summary>        
+        /// <returns></returns>
+        [OperationContract]
+        int [] GetAllPrivateContest();
+
+        /// <summary>
+        /// Return a contest for given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [OperationContract]
+        Dictionary<int, int> GetContest(int id);
+
+        /// <summary>
+        /// Adds a player for given contest
+        /// </summary>
+        /// <param name="contestID"></param>
+        /// <returns>Unique id of created player</returns>
+        [OperationContract]
+        int AddPlayer(int contestID);
+
+        /// <summary>
+        /// Updates score for given player
+        /// </summary>
+        /// <param name="contestid"></param>
+        /// <param name="playerid"></param>
+        /// <param name="score"></param>
+        [OperationContract]
+        void UpdateScore(int contestid, int playerid, int score);
 
         [OperationContract]
-        int createPrivateContest();
-
-        [OperationContract]
-        int[] geAllPubicContest();
-
-        [OperationContract]
-        int []geAllPrivateContest();
-
-        [OperationContract]
-        int getContest();
-
-        [OperationContract]
-        int UpdateContest();
-
-
-
-        // TODO: Add your service operations here
+        int [] GetAllPlayers(int contestid);
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "ServiceLib.ContractType".
-    [DataContract]
-    public class Contest
-    {
-   
-        public void print () { Console.WriteLine("Hello from server"); }
-    }
+
 }

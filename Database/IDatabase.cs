@@ -11,15 +11,51 @@ namespace Database
      */
     public interface IDatabase
     {
+        
+
         /// <summary>
-        /// Creates a contest
+        /// Creates a public contest, Visible to all clients
         /// </summary>
-        /// <returns>unique id of contest</returns>
-        int CreateContest(bool isPrivate=false);
+        /// <param name="clientid"></param>
+        /// <returns>Contst id</returns>
+        int CreatePublicContest(int clientid);
+        /// <summary>
+        /// Creates a priveate contest only visible to this client
+        /// </summary>
+        /// <param name="clientid"></param>
+        /// <returns></returns>
+        int CreatePrivateContest(int clientid);
+        /// <summary>
+        /// Returns all public contests
+        /// </summary>
+        /// <returns></returns>
         int[] GetAllPublicContest();
-        int[] GetAllPrivateContest();
-        int CreatePlayer();
-        void UpdateScore(int playerId,int score);
-        int getScore(int playerId);
+        /// <summary>
+        /// Returns all private contest for this client
+        /// </summary>
+        /// <param name="clientid"></param>
+        /// <returns></returns>
+        int[] GetAllPrivateContest(int clientid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="contestid"></param>
+        /// <returns></returns>
+        int CreatePlayer(int contestid);
+        /// <summary>
+        /// Updates score for a player
+        /// </summary>
+        /// <param name="contestid"></param>
+        /// <param name="playerId"></param>
+        /// <param name="score"></param>
+        void UpdateScore(int contestid, int playerId,int score);
+        /// <summary>
+        /// Retrusn a contest for this id
+        /// </summary>
+        /// <param name="contestID"></param>
+        /// <returns></returns>
+        Dictionary<int,int> getContest(int contestID);
+
+        int [] GetAllPlayers(int contestID);
     }
 }

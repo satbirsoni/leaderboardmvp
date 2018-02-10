@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Database;
 
 namespace ServiceLib
@@ -6,51 +7,61 @@ namespace ServiceLib
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service : IService
     {
-        Database.IDatabase db = new Database.Database();
+        private static Database.IDatabase db = new Database.Database();
+        private static int client_ids = 0;
+
+        private int myClientID = ++client_ids;
 
         public int addContest()
         {
-            return db.CreateContest();
+            return db.CreatePublicContest(myClientID);
         }
 
-        public int createPrivateContest()
+        public int AddPlayer(int contestID)
         {
-            return db.CreateContest(true);
+            return db.CreatePlayer(contestID);
         }
 
-        public int createPublicContest()
+        public int CreatePrivateContest()
         {
-            return db.CreateContest();
+            return db.CreatePrivateContest(myClientID);
         }
 
-        public int[] geAllPrivateContest()
+        public int CreatePublicContest()
         {
-            return db.GetAllPrivateContest();
+            return db.CreatePublicContest(myClientID);
         }
 
-        public int[] geAllPubicContest()
+
+        public int[] GetAllPrivateContest()
+        {
+            return db.GetAllPrivateContest(myClientID);
+        }
+
+        public int[] GetAllPubicContest()
         {
             return db.GetAllPublicContest();
         }
-
-        public int getContest()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public Contest GetDataUsingDataContract(Contest composite)
-        {
-           return composite;
-        }
-
+      
         public int UpdateContest()
         {
             throw new NotImplementedException();
+        }
+
+        public void UpdateScore(int contestid, int playerid, int score)
+        {
+            Console.WriteLine("Service update score contest {0}, player {1}, score {2}", contestid, playerid, score);
+            db.UpdateScore(contestid, playerid, score);
+        }
+
+        Dictionary<int, int> IService.GetContest(int id)
+        {
+            return db.getContest(id);
+        }
+
+        public int [] GetAllPlayers (int contestID)
+        {
+            return db.GetAllPlayers(contestID);
         }
     }
 }

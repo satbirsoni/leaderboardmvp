@@ -1,75 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8000/LeaderBoard/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:element name="createPublicContest">
+  <xs:element name="CreatePublicContest">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="createPublicContestResponse">
+  <xs:element name="CreatePublicContestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="createPublicContestResult" type="xs:int" />
+        <xs:element minOccurs="0" name="CreatePublicContestResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="createPrivateContest">
+  <xs:element name="CreatePrivateContest">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="createPrivateContestResponse">
+  <xs:element name="CreatePrivateContestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="createPrivateContestResult" type="xs:int" />
+        <xs:element minOccurs="0" name="CreatePrivateContestResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="geAllPubicContest">
+  <xs:element name="GetAllPubicContest">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="geAllPubicContestResponse">
+  <xs:element name="GetAllPubicContestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="geAllPubicContestResult" nillable="true" type="q1:ArrayOfint" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllPubicContestResult" nillable="true" type="q1:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="geAllPrivateContest">
+  <xs:element name="GetAllPrivateContest">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="geAllPrivateContestResponse">
+  <xs:element name="GetAllPrivateContestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="geAllPrivateContestResult" nillable="true" type="q2:ArrayOfint" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllPrivateContestResult" nillable="true" type="q2:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getContest">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="getContestResponse">
+  <xs:element name="GetContest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="getContestResult" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateContest">
+  <xs:element name="GetContestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetContestResult" nillable="true" type="q3:ArrayOfKeyValueOfintint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPlayerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPlayerResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contestid" type="xs:int" />
+        <xs:element minOccurs="0" name="playerid" type="xs:int" />
+        <xs:element minOccurs="0" name="score" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateScoreResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateContestResponse">
+  <xs:element name="GetAllPlayers">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateContestResult" type="xs:int" />
+        <xs:element minOccurs="0" name="contestid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllPlayersResult" nillable="true" type="q4:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
